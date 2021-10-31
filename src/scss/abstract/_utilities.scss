@@ -1,0 +1,66 @@
+%flex-column-all-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%flex-column-start-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+// GIT FILE STATUS
+.git-status {
+  &--tracked {
+    color: var(--contrast-secondary-light);
+  }
+
+  &--untracked {
+    color: #73c991;
+    position: relative;
+    &::after {
+      content: "U";
+      position: absolute;
+      right: 0.75rem;
+      font-size: 0.75rem;
+    }
+  }
+
+  &--modified {
+    color: #e2c08d;
+    position: relative;
+    &::after {
+      content: "M";
+      position: absolute;
+      right: 0.75rem;
+      font-size: 0.75rem;
+    }
+  }
+}
+
+// FILE ICONS
+.html-icon {
+  @include fileIcon("icon-html.svg");
+}
+
+.scss-icon {
+  // #f06292
+  @include fileIcon("icon-scss.svg");
+}
+
+.tsx-icon {
+  @include fileIcon("icon-react.svg");
+}
+
+.py-icon {
+  @include fileIcon("icon-python.svg");
+}
+
+.js-icon {
+  @include fileIcon("icon-js.svg");
+}
+
+.vue-icon {
+  @include fileIcon("icon-vue.svg");
+}
